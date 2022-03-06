@@ -1,0 +1,114 @@
+//- extends layout
+
+//- block content
+  //- h1= title
+  //- p Welcome to #{title}
+
+doctype html
+html(lang='en')
+  head
+    title Food Blog
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    script(src='https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js')
+    link(rel='preconnect', href='https://fonts.gstatic.com')
+    link(href='https://fonts.googleapis.com/css2?family=Sacramento&display=swap', rel='stylesheet')
+    // Link external CSS style file
+    link(rel='stylesheet', href='myapp/public/stylesheets/style.css')
+    // Link external VUE file
+    script(src='myapp/public/javascripts/vue.js', type='module')
+    
+  body.container-fluid
+    .row
+      aside#leftside.col-4
+      aside#rightside.col-8
+    #container.container-fluid
+      header#headerinfo
+        myheader
+      main
+        aside#photos
+          myheroimage
+        mycomments
+        section#blogposts
+          .post
+            .avatar
+              img(v-on:click='isShow1 = true', v-bind:src='image', alt='', width='60px')
+              span.author {{brianna.author}}
+              |  --
+              span.date {{brianna.date}}
+              span.reply {{brianna.reply}}
+            |  
+            p {{brianna.desc}}
+            .popupwindow(v-if='isShow1')
+              h3 {{brianna.author}}
+              .level
+                b Foodie Level: 
+                span {{brianna.level}}
+              .bio
+                b Bio: 
+                p {{brianna.bio}}
+              button.closebox(v-on:click='isShow1=false')
+                | Close
+          .post
+            .avatar
+              img(v-on:click='isShow2 = true', v-bind:src='image', alt='', width='60px')
+              span.author {{linh.author}}
+              | -
+              span.date {{linh.date}}
+              span.reply {{linh.reply}}
+            |  
+            p {{linh.desc}}
+            .popupwindow(v-if='isShow2')
+              h3 {{linh.author}}
+              .level
+                b Foodie Level: 
+                span {{linh.level}}
+              .bio
+                b Bio: 
+                p {{linh.bio}}
+              button.closebox(v-on:click='isShow2=false')
+                | Close
+          .post
+            .avatar
+              img(v-on:click='isShow3 = true', v-bind:src='image', alt='', width='60px')
+              span.author {{catherine.author}}
+              | -
+              span.date {{catherine.date}}
+              span.reply {{catherine.reply}}
+            |  
+            p {{catherine.desc}}
+            .popupwindow(v-if='isShow3')
+              h3 {{catherine.author}}
+              .level
+                b Foodie Level: 
+                span {{catherine.level}}
+              .bio
+                b Bio: 
+                p {{catherine.bio}}
+              button.closebox(v-on:click='isShow3=false')
+                | Close
+          .post
+            .avatar
+              img(v-on:click='isShow4 = true', v-bind:src='image', alt='', width='60px')
+              span.author {{kali.author}}
+              | -
+              span.date {{kali.date}}
+              span.reply {{kali.reply}}
+            |  
+            p {{kali.desc}}
+            .popupwindow(v-if='isShow4')
+              h3 {{kali.author}}
+              .level
+                b Foodie Level: 
+                span {{kali.level}}
+              .bio
+                b Bio: 
+                p {{kali.bio}}
+              button.closebox(v-on:click='isShow4=false')
+                | Close
+      footer &copy; Copyright FOOD BLOG
+    // jQuery first, then Popper.js, then Bootstrap JS
+    script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q', crossorigin='anonymous')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl', crossorigin='anonymous')
+    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js', integrity='sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW', crossorigin='anonymous')
